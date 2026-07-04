@@ -1,5 +1,11 @@
 <?php
 // Подключение к базе данных через PDO (фейковые креды для примера)
+
+// Параметры окружения приложения
+$appEnv  = getenv('APP_ENV') ?: 'local';
+$charset = 'utf8mb4';
+$timeout = 5;
+
 $host = 'localhost';
 $dbname = 'test_db';
 $user = 'fake_user';
