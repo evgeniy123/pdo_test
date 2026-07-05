@@ -8,8 +8,9 @@ $timeout = 5;
 
 $host = 'localhost';
 $dbname = 'test_db';
-$dbUser = 'fake_user';
-$dbPass = 'fake_password';
+
+// Секретные креды вынесены в отдельный файл
+require __DIR__ . '/config.php';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $dbUser, $dbPass);
