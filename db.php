@@ -1,16 +1,17 @@
 <?php
-// Подключение к базе данных через PDO (креды берём из окружения, хардкод удалён)
+// Подключение к базе данных через PDO (фейковые креды для примера)
 
-$appEnv  = getenv('APP_ENV') ?: 'local';
-$charset = 'utf8mb4';
-$timeout = 5;
+// Настройки логирования приложения
+$logLevel = 'debug';
+$logFile  = '/var/log/app.log';
+
+$host = 'localhost';
+$dbname = 'test_db';
+$user = 'fake_user';
+$pass = 'fake_password';
 
 try {
-    $pdo = new PDO(
-        "mysql:host=" . getenv('DB_HOST') . ";dbname=" . getenv('DB_NAME') . ";charset=$charset",
-        getenv('DB_USER'),
-        getenv('DB_PASS')
-    );
+    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $user, $pass);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     die('Ошибка подключения к базе данных: ' . $e->getMessage());
