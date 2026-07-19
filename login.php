@@ -1,6 +1,7 @@
 <?php
 session_start();
 require 'db.php';
+require 'auth.php';
 
 $error = '';
 
@@ -8,11 +9,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $username = trim($_POST['username'] ?? '');
     $password = $_POST['password'] ?? '';
 
-    $stmt = $pdo->prepare('SELECT id, username, password FROM users WHERE username = :username');
-    $stmt->execute(['username' => $username]);
-    $userRow = $stmt->fetch(PDO::FETCH_ASSOC);
+    // Проверка учётных данных вынесена в auth.php
+    $userRow = authenticate($pdo, $username, $password);
 
-    if ($userRow && password_verify($password, $userRow['password'])) {
+    if ($userRow !== null) {
         $_SESSION['user_id'] = $userRow['id'];
         $_SESSION['username'] = $userRow['username'];
         header('Location: welcome.php');

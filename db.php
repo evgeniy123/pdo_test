@@ -1,14 +1,7 @@
 <?php
 // Подключение к базе данных через PDO (фейковые креды для примера)
 
-// Настройки логирования приложения
-$logLevel = 'debug';
-$logFile  = '/var/log/app.log';
-
-$host = 'localhost';
-$dbname = 'test_db';
-$user = 'fake_user';
-$pass = 'fake_password';
+require __DIR__ . '/config.php';
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $user, $pass);

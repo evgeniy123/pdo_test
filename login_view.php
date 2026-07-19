@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Вход в систему</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+<?php
+$pageTitle = 'Вход в систему';
+require __DIR__ . '/partials/layout_head.php';
+?>
     <div class="login-container">
         <h1>Вход</h1>
 
         <?php if ($error): ?>
-            <p class="error"><?= htmlspecialchars($error) ?></p>
+            <p class="error"><?
+            = htmlspecialchars($error) ?></p>
         <?php endif; ?>
 
         <form method="POST" action="login.php">
