@@ -1,4 +1,5 @@
 <?php
+// Страница входа: обработка формы и проверка учётных данных
 session_start();
 require 'db.php';
 require 'auth.php';
