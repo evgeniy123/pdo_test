@@ -1,12 +1,6 @@
 <?php
 session_start();
 
-// Доступ к странице разрешён только авторизованным пользователям
-if (!isset($_SESSION['user_id'])) {
-    header('Location: login.php');
-    exit;
-}
-
 $pageTitle = 'Добро пожаловать';
 require __DIR__ . '/partials/layout_head.php';
 ?>
