@@ -1,0 +1,12 @@
+# >>> oylinks-docs-sync v1 (largeObjects=git) >>>
+oylinks-test/**            -text -eol -ident -filter -working-tree-encoding
+oylinks-test/objects/**    -text -eol -ident -filter -working-tree-encoding -diff -merge
+# <<< oylinks-docs-sync v1 <<<
+# >>> oylinks-docs-sync v1 (largeObjects=git) >>>
+oylinks-test1/**            -text -eol -ident -filter -working-tree-encoding
+oylinks-test1/objects/**    -text -eol -ident -filter -working-tree-encoding -diff -merge
+# <<< oylinks-docs-sync v1 <<<
+# >>> oylinks-docs-sync v1 (largeObjects=git) >>>
+oylinks-test12/**            -text -eol -ident -filter -working-tree-encoding
+oylinks-test12/objects/**    -text -eol -ident -filter -working-tree-encoding -diff -merge
+# <<< oylinks-docs-sync v1 <<<
